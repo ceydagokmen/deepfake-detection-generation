@@ -1,0 +1,11 @@
+torch
+torchvision
+gradio
+opencv-python-headless
+facenet-pytorch
+scikit-learn
+seaborn
+matplotlib
+numpy
+Pillow
+ninja
