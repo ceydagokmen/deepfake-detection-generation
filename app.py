@@ -1,8 +1,11 @@
 
+import sys
 import torch
 import numpy as np
 import gradio as gr
 from PIL import Image
+
+sys.path.insert(0, './stylegan2-ada-pytorch')
 
 from model import DeepfakeDetector
 from dataset import get_transform
@@ -14,12 +17,10 @@ class DeepfakeApp:
         self.device = device
         self.transform = get_transform()
 
-        # Algılama modeli
         self.detector = DeepfakeDetector()
         self.detector.load(model_path, device)
         self.detector = self.detector.to(device)
 
-        # Üretim modeli
         self.generator = FaceGenerator(generator_path, device)
 
     def detect(self, image):
