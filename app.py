@@ -9,7 +9,7 @@ sys.path.insert(0, './stylegan2-ada-pytorch')
 
 from model import DeepfakeDetector
 from dataset import get_transform
-from generate import FaceGenerator
+from face_generator import FaceGenerator
 
 
 class DeepfakeApp:
